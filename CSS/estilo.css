@@ -1,0 +1,188 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(180deg, #fdfaf6 0%, #f8f2eb 100%);
+    color: #2f2f2f;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    scroll-behavior: smooth;
+}
+
+/* ---- ENCABEZADO ---- */
+header {
+    background: linear-gradient(135deg, #a0764a, #e0c3a0);
+    color: #fff;
+    text-align: center;
+    padding: 70px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #e0c3a0, #b07b52, #e0c3a0);
+}
+
+header h1 {
+    font-size: 3.2em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 15px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* ---- MENÚ DE NAVEGACIÓN ---- */
+nav {
+    background: #f4e4d4;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #b07b52;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4a2f1b;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
+    background-color: #b07b52;
+    color: #fff;
+    transform: scale(1.08);
+}
+
+/* ---- SECCIONES ---- */
+section {
+    background-color: #ffffff;
+    margin: 60px auto;
+    padding: 60px 80px;
+    max-width: 1100px;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+section h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.3em;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #b07b52;
+    display: inline-block;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+section p {
+    text-align: justify;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+/* ---- ÁREA DE IMÁGENES ---- */
+.img-area {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.img-area img {
+    width: 80%;
+    max-width: 700px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.img-area img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ---- PIE DE PÁGINA ---- */
+footer {
+    background-color: #4a2f1b;
+    color: #f9f3ef;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1em;
+    letter-spacing: 1px;
+    border-top: 4px solid #b07b52;
+}
+
+/* ---- COLORES DIFERENTES POR TEMA ---- */
+.arquitectura h2 { color: #a86a3f; border-color: #a86a3f; }
+.danza h2        { color: #c77b66; border-color: #c77b66; }
+.literatura h2   { color: #8b4513; border-color: #8b4513; }
+.cine h2         { color: #d2691e; border-color: #d2691e; }
+.cultura h2      { color: #9c6b43; border-color: #9c6b43; }
+.musica h2       { color: #b87333; border-color: #b87333; }
+.pintura h2      { color: #cd853f; border-color: #cd853f; }
+
+/* ---- EFECTO DE ANIMACIÓN AL ENTRAR ---- */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: aparecer 1s ease forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    section {
+        padding: 30px 25px;
+        margin: 30px 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .img-area img {
+        width: 95%;
+    }
+}
